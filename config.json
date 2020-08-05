@@ -1,0 +1,21 @@
+{
+  "params": {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/mycode",
+    "prod_uri": "mysql://root:@localhost/mycode",
+    "fb_url": "https://www.facebook.com/",
+    "tw_url": "https://www.instagram.com/jaihind_jigar",
+    "gh_url": "https://www.github.com/jigar2310",
+    "blog_name": "Krishna enterprise",
+    "tag_line": "A Code Theme by Developer",
+    "gmail-user": "youremail",
+    "gmail-password": "youremailpassword",
+    "about-text": "A developer is an individual that builds and create software and applications. He or she writes, debugs and executes the source code of a software application. A developer is also known as a software developer, computer programmer, programmer, software coder or software engineer.",
+    "no_of_post": 5,
+    "admin": "admin.jpg",
+    "admin_username": "jigarprajapati",
+    "admin_password": "jigar",
+    "upload_location": "C:\\Users\\hp\\Desktop\\Flask\\static\\img",
+    "home": "home-bg.jpg"
+  }
+}

@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<style type="text/css">
+  .hr-black {
+    height: 4px;
+    float: center;
+    width: 100px;
+    color: black;
+    background-color: black;
+    border: none;
+  }
+  
+</style>
+<header class="intro-header" style="background-image: url('{{ url_for('static', filename='img/home-bg.jpg')}}')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <h1>Admin Panel</h1>
+          <hr class="small">
+          <span class="subheading">Welcome to the admin panel</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <h1>Basic Action</h1>
+      <a href="/logout">
+        <button class="btn btn-primary">Logout</button>
+      </a>
+      <hr>
+      
+      <hr class="med hr-black">
+      <h1>Edit Comments</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">&nbsp;&nbsp;  Comments</th>
+            <th scope="col">&nbsp;&nbsp; Date</th>
+            <th scope="col">&nbsp;&nbsp; Post Title</th>
+            <th scope="col">&nbsp;&nbsp; Delete</th>
+          </tr>
+        </thead>
+        {% for comment in comments %}
+        <tbody>
+          <tr>
+            <td >{{comment.username}}</td>
+            <td class="fsmall">{{comment.date}}</td>
+            <td>{{comment.post_srno}}</td>
+            <td >{{comment.content}}</td>
+            <td><a href="/comment/{{comment.sno}}"><button type="button" class="btn btn-primary ">Delete</button></a></td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

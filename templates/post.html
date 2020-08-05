@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<style>
+    .fsmall {
+        font-size: smaller;
+        margin-top: 0px;
+    }
+
+    .usmall {
+        font-size: medium;
+        margin-bottom: 0px;
+    }
+</style>
+link
+
+<!-- Page Header -->
+
+{% set fname = 'img/' + post.img_file %}
+<header class="intro-header" style="background-image: url('{{ url_for('static', filename=fname) }}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>{{post.title}}</h1>
+                    <h2 class="subheading">{{post.tagline}}</h2>
+                    <span class="meta">Posted by
+                        <a href="#">Admin</a>
+                        on {{post.date}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                {{post.content}}
+                <hr>
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Add Your Comment</label>
+                        <input type="name" name="username" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Enter Your Name"><br>
+                        <input type="text" name="content" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="add a comment here"><br>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+                <hr>
+
+                <h2>Comments</h2>
+                {% for comment in comments %}
+                <h5 class="usmall">
+                    {{comment.username}} :
+                    </h4>
+                    <p class="fsmall">
+                        {{comment.content}}
+                    </p>
+                    {% endfor %}
+
+
+            </div>
+            <div><span class="oi oi-trash"></span></div>
+        </div>
+    </div>
+</article>
+
+{% endblock %}
